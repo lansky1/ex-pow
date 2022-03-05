@@ -23,4 +23,4 @@ generatePngFiles = 1
 
 # To Delete Powerpoint Files Enter 1
 # This will need generatePngFiles to be 1
-deletePresentations = 0
+deletePresentations = 1

@@ -41,11 +41,14 @@ def main(slideIndex):
     # print(text_box_list)
 
     # Edit the Fields
+    # Trial and Error
     # First Name
     shapes[7].text = ase.mName[slideIndex].split(" ", 1)[0]
     # Last Name
     shapes[8].text = ase.mName[slideIndex].split(" ", 1)[1]
     # Company
+    # paragraph = shapes[9].text_frame.paragraphs[0]
+    # paragraph.text = ase.mCompany[slideIndex]
     shapes[9].text = ase.mCompany[slideIndex]
     # Favorite Header
     # shapes[10].text
@@ -66,7 +69,7 @@ def main(slideIndex):
     # Finally save the presentation
     TARGET_FILE_TITLE = asue.TARGET_FILE_NAME + \
         '_' + str(slideIndex+1) + '.pptx'
-    # root.save(TARGET_FILE_TITLE)
+    root.save(TARGET_FILE_TITLE)
 
 
 if __name__ == "__main__":
@@ -78,3 +81,5 @@ if asue.generatePngFiles:
         if (file.endswith(".pptx") and file.startswith("FINAL")):
             # print(file, file.split(".")[0] + '.png')
             GetPng(file, file.split(".")[0] + '.png')
+            if asue.deletePresentations:
+                os.remove(os.path.join(os.getcwd(), file))
